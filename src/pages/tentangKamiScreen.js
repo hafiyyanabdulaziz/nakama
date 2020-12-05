@@ -9,8 +9,8 @@ const TentangKami = () => {
     return (
         <SafeAreaView>
             <ScrollView>
-                <Image source={Logo}/>
-                <Text>{textPesan}</Text>
+                <Image style={style.imageStyle} source={Logo}/>
+                <Text style={style.textStyle} >{textPesan}</Text>
             </ScrollView>
         </SafeAreaView>
     );
@@ -21,4 +21,4 @@ export default TentangKami;
 const style = StyleSheet.create({
     imageStyle:{},
     textStyle:{},
-    });
+});
