@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, FlatList, Image, ScrollView } from 'react-nativ
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import ProductCard from '../components/ProductCard'
 
-const Home = () => {
+const Home = ({ navigation }) => {
     const [dataSource, setDataSource] = useState([]);
 
     useState(() => {
@@ -20,7 +20,11 @@ const Home = () => {
                 nestedScrollEnabled={true}
                 data={dataSource}
                 renderItem={({ item }) => (
-                    <ProductCard src={item.src} harga={30000} judul={'Jeruk Indonesia Asli'} pemilik={'Pak Joko'} />
+                    <View style={styles.posisi1}>
+                        <TouchableOpacity>
+                            <ProductCard src={item.src} harga={30000} judul={'Jeruk Indonesia Asli'} pemilik={'Pak Joko'} />
+                        </TouchableOpacity>
+                    </View>
                     // <View style={{ flex: 1, flexDirection: 'column', margin: 5 }}>
                     //     <Image style={styles.imageThumbnail} source={{ uri: item.src }} />
                     // </View>
@@ -28,8 +32,8 @@ const Home = () => {
                 //Setting the number of column
                 numColumns={2}
             />
-            <View style={styles.posisi} >
-                <TouchableOpacity>
+            <View style={styles.posisi2} >
+                <TouchableOpacity onPress={() => { navigation.navigate('Tambah Data') }} >
                     <View style={styles.btnJual} >
                         <Text>Jual</Text>
                     </View>
@@ -58,8 +62,11 @@ const styles = StyleSheet.create({
         width: 50,
         margin: 30,
     },
-    posisi: {
+    posisi2: {
         position: 'absolute',
         bottom: 0,
+    },
+    posisi1: {
+        flex: 1,
     }
 })

@@ -6,6 +6,7 @@ import TentangKami from '../pages/tentangKamiScreen';
 import Login from '../pages/Login'
 import CustomSidebarMenu from './CustomSidebarMenu'
 import NavigationDrawerStructure from '../components/NavigationDrawerStructure'
+import TambahData from '../pages/TambahData'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -39,6 +40,7 @@ const StackHome = ({ navigation }) => {
                     backgroundColor: 'green',
                 },
             }} />
+            <Stack.Screen name="Tambah Data" component={TambahData} />
         </Stack.Navigator>
     )
 }
