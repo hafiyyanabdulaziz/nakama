@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList, Image, ScrollView } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, FlatList, Image, ScrollView, TouchableOpacity } from 'react-native'
 import ProductCard from '../components/ProductCard'
+import FIREBASE from '../config/FIREBASE'
 
 const Home = ({ navigation }) => {
-    const [dataSource, setDataSource] = useState([]);
+    const [dataSource, setDataSource] = useState();
 
-    useState(() => {
-        let items = Array.apply(null, Array(10)).map((v, i) => {
-            return { id: i, src: 'http://placehold.it/200x200?text=' + (i + 1) };
-        });
-        console.log(items)
-        setDataSource(items);
+    useEffect(() => {
+        FIREBASE.database()
+            .ref('produk')
+            .once('value', (querySnapShot) => {
+                let data = querySnapShot.val() ? querySnapShot.val() : {};
+                setDataSource(Object.values(data));
+            });
     }, []);
 
     return (
@@ -22,7 +23,7 @@ const Home = ({ navigation }) => {
                 renderItem={({ item }) => (
                     <View style={styles.posisi1}>
                         <TouchableOpacity>
-                            <ProductCard src={item.src} harga={30000} judul={'Jeruk Indonesia Asli'} pemilik={'Pak Joko'} />
+                            <ProductCard src={item.photoProduk} harga={item.hargaProduk} judul={item.namaProduk} pemilik={item.namaKebun} />
                         </TouchableOpacity>
                     </View>
                     // <View style={{ flex: 1, flexDirection: 'column', margin: 5 }}>
@@ -31,6 +32,7 @@ const Home = ({ navigation }) => {
                 )}
                 //Setting the number of column
                 numColumns={2}
+                keyExtractor={(item, index) => index}
             />
             <View style={styles.posisi2} >
                 <TouchableOpacity onPress={() => { navigation.navigate('Tambah Data') }} >

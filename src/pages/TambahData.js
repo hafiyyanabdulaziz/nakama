@@ -29,7 +29,7 @@ const TambahData = ({ navigation }) => {
                 .push(produk)
                 .then((data) => {
                     Alert.alert('Sukses', 'Produk berhasil ditambahkan');
-                    navigation.pop()
+                    navigation.replace('Home')
                 })
                 .catch((error) => {
                     console.log("Error : ", error);
