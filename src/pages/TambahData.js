@@ -1,18 +1,28 @@
 import React from 'react'
 import { Alert, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import FIREBASE from '../config/FIREBASE'
+import { useForm } from '../utils/useForm'
 
 const TambahData = ({ navigation }) => {
+    const [form, setForm] = useForm({
+        namaKebun: '',
+        namaProduk: '',
+        deskripsiProduk: '',
+        hargaProduk: '',
+        noWhatsApp: '',
+    });
+
     const onSubmit = () => {
-        //if (this.state.nama && this.state.nomorHP && this.state.alamat) {
-        if (true) {
+        if (form.namaKebun && form.namaProduk && form.deskripsiProduk && form.hargaProduk && form.noWhatsApp) {
+            //if (true) {
             const connectToFirebase = FIREBASE.database().ref('produk');
             const produk = {
-                namaKebun: 'Pak Joko',
-                namaProduk: 'Strawberry Indonesia Manis',
-                deskripsiProduk: 'Merupakan strawberry asli indonesia langsung dipetik dari kebunnya. Dijamin rasanya manis banget.',
-                hargaProduk: 20000,
-                noWhatsApp: '6281283793435'
+                namaKebun: form.namaKebun,
+                namaProduk: form.namaProduk,
+                deskripsiProduk: form.deskripsiProduk,
+                hargaProduk: form.hargaProduk,
+                noWhatsApp: form.noWhatsApp,
+                photoProduk: 'https://picsum.photos/200'
             }
 
             connectToFirebase
@@ -27,7 +37,7 @@ const TambahData = ({ navigation }) => {
 
 
         } else {
-            Alert.alert('Error', 'Nama, Nomor HP, dan Alamat wajib diisi');
+            Alert.alert('Error', 'Semua harus diisi');
         }
     }
 
@@ -37,15 +47,15 @@ const TambahData = ({ navigation }) => {
                 <Text>Foto</Text>
             </View>
             <Text>Nama Kebun</Text>
-            <TextInput style={styles.textInput} />
+            <TextInput style={styles.textInput} onChangeText={value => setForm('namaKebun', value)} />
             <Text>Nama Produk</Text>
-            <TextInput style={styles.textInput} />
+            <TextInput style={styles.textInput} onChangeText={value => setForm('namaProduk', value)} />
             <Text>Deskripsi Produk</Text>
-            <TextInput style={styles.textInput} />
+            <TextInput style={styles.textInput} onChangeText={value => setForm('deskripsiProduk', value)} />
             <Text>Harga Produk</Text>
-            <TextInput style={styles.textInput} />
+            <TextInput style={styles.textInput} onChangeText={value => setForm('hargaProduk', value)} />
             <Text>No Whatsapp</Text>
-            <TextInput style={styles.textInput} />
+            <TextInput style={styles.textInput} onChangeText={value => setForm('noWhatsApp', value)} />
             <TouchableOpacity onPress={() => onSubmit()} >
                 <View style={styles.btn} >
                     <Text>Tambah Barang</Text>
