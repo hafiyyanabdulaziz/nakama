@@ -7,6 +7,7 @@ import Login from '../pages/Login'
 import CustomSidebarMenu from './CustomSidebarMenu'
 import NavigationDrawerStructure from '../components/NavigationDrawerStructure'
 import TambahData from '../pages/TambahData'
+import Detail from '../pages/Detail'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -41,6 +42,7 @@ const StackHome = ({ navigation }) => {
                 },
             }} />
             <Stack.Screen name="Tambah Data" component={TambahData} />
+            <Stack.Screen name="Detail" component={Detail} />
         </Stack.Navigator>
     )
 }

@@ -22,7 +22,7 @@ const Home = ({ navigation }) => {
                 data={dataSource}
                 renderItem={({ item }) => (
                     <View style={styles.posisi1}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Detail', { namaKebun: item.namaKebun, namaProduk: item.namaProduk, deskripsiProduk: item.deskripsiProduk, hargaProduk: item.hargaProduk, noWhatsApp: item.noWhatsApp, photoProduk: item.photoProduk })} >
                             <ProductCard src={item.photoProduk} harga={item.hargaProduk} judul={item.namaProduk} pemilik={item.namaKebun} />
                         </TouchableOpacity>
                     </View>
