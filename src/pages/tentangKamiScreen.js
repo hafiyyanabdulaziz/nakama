@@ -9,8 +9,10 @@ const TentangKami = () => {
     return (
         <SafeAreaView>
             <ScrollView>
-                <Image style={style.imageStyle} source={Logo}/>
-                <Text style={style.textStyle} >{textPesan}</Text>
+                <View style={style.imageposition}>
+                    <Image style={style.imageStyle} source={Logo}/>
+                    <Text style={style.textStyle} >{textPesan}</Text>
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
@@ -19,6 +21,19 @@ const TentangKami = () => {
 export default TentangKami;
 
 const style = StyleSheet.create({
-    imageStyle:{},
-    textStyle:{},
+    imageposition:{
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    imageStyle:{
+        marginVertical:50,
+        width: 200,
+        height: 200,
+        resizeMode:'contain',
+    },
+    textStyle:{
+        marginHorizontal:40,
+        textAlign:"justify",
+        fontSize:24
+    },
 });
