@@ -38,7 +38,7 @@ const StackHome = ({ navigation }) => {
                     <NavigationDrawerStructure navigationProps={navigation} />
                 ),
                 headerStyle: {
-                    backgroundColor: 'green',
+                    backgroundColor: '#4CAF50',
                 },
             }} />
             <Stack.Screen name="Tambah Data" component={TambahData} />
@@ -55,7 +55,7 @@ const StackTentangKami = ({ navigation }) => {
                     <NavigationDrawerStructure navigationProps={navigation} />
                 ),
                 headerStyle: {
-                    backgroundColor: 'green',
+                    backgroundColor: '#4CAF50',
                 },
             }} />
         </Stack.Navigator>

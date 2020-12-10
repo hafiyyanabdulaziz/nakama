@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView,ScrollView,View,Text,Image,StyleSheet } from 'react-native';
+import { SafeAreaView,ScrollView,View,Text,Image,StyleSheet, ImageBackground } from 'react-native';
 import { Logo } from '../assets';
 
 const textPesan = "Nakama merupakan sebuah aplikasi jual beli hasi pertanian yang memungkinkan semua orang dapat menjual ataupun membeli tanpa perlu repot mencarinya, dasar terciptanya aplikasi ini karena masih banyaknya petani kecil yang kesulitan dalam memasarkan hasil pertaniannya.";
@@ -23,7 +23,8 @@ export default TentangKami;
 const style = StyleSheet.create({
     imageposition:{
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor:'#FFFFFF'
     },
     imageStyle:{
         marginVertical:50,
