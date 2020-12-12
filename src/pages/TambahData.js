@@ -63,21 +63,21 @@ const TambahData = ({ navigation }) => {
             <TouchableOpacity onPress={getImage} >
                 {/* {hasPhoto && <View style={styles.photoInput} ><Text></Text></View>} */}
                 {hasPhoto && <Image source={photo} style={styles.image} />}
-                {!hasPhoto && <View style={styles.photoInput} ><Text>false</Text></View>}
+                {!hasPhoto && <View style={styles.photoInput} ><Text style={{alignSelf: 'center'}}>Tambah Foto</Text></View>}
             </TouchableOpacity>
-            <Text>Nama Kebun</Text>
+            <Text style={styles.text}>Nama Kebun</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('namaKebun', value)} />
-            <Text>Nama Produk</Text>
+            <Text style={styles.text}>Nama Produk</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('namaProduk', value)} />
-            <Text>Deskripsi Produk</Text>
+            <Text style={styles.text}>Deskripsi Produk</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('deskripsiProduk', value)} />
-            <Text>Harga Produk</Text>
+            <Text style={styles.text}>Harga Produk</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('hargaProduk', value)} />
-            <Text>No Whatsapp</Text>
+            <Text style={styles.text}>No Whatsapp</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('noWhatsApp', value)} />
             <TouchableOpacity onPress={() => onSubmit()} >
                 <View style={styles.btn} >
-                    <Text>Tambah Barang</Text>
+                    <Text style={styles.textbtn}>Tambah Barang</Text>
                 </View>
             </TouchableOpacity>
         </ScrollView>
@@ -87,18 +87,39 @@ const TambahData = ({ navigation }) => {
 export default TambahData
 
 const styles = StyleSheet.create({
+    text: {
+        margin: 5,
+        
+    },
     textInput: {
         borderWidth: 1,
         margin: 5,
+        borderRadius: 10
     },
     photoInput: {
-        backgroundColor: 'yellow',
-        height: 200
+        backgroundColor: 'white',
+        height: 200,
+        width: 350,
+        margin: 5,
+        justifyContent: 'center',
+        alignSelf: 'center',
+        borderRadius: 20,
+        borderWidth: 2,
+        borderStyle: 'dashed'
     },
     btn: {
-        backgroundColor: 'yellow',
-        height: 30,
-        margin: 20
+        backgroundColor: '#74B631',
+        height: 50,
+        width: 200,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10,
+        alignSelf: 'center',
+        borderRadius: 20,
+    },
+    textbtn: {
+        fontSize: 20,
+        color: 'white'
     },
     image: {
         height: 200,
