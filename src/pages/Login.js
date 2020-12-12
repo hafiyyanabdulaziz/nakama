@@ -45,7 +45,7 @@ const Login = ({ navigation }) => {
     }
     return (
         <ImageBackground style={styles.background} source={BackgroundLogin} >
-            <View>
+            <View style={{alignItems: "center"}}>
                 <Image style={styles.logo} source={Logo} ></Image>
                 <Text style={styles.text} >Temukan produk petani lokal langsung dari petani aslinya</Text>
                 <GoogleSigninButton
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     logo: {
         height: 130,
         width: 125,
+        marginBottom: 50
 
     },
     text: {
@@ -77,6 +78,7 @@ const styles = StyleSheet.create({
         fontSize: 36,
         textAlign: "center",
         fontWeight: "500",
+        marginBottom: 50
     },
     googleButton: {
         width: 192,
