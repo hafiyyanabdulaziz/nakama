@@ -63,7 +63,11 @@ const TambahData = ({ navigation }) => {
             <TouchableOpacity onPress={getImage} >
                 {/* {hasPhoto && <View style={styles.photoInput} ><Text></Text></View>} */}
                 {hasPhoto && <Image source={photo} style={styles.image} />}
-                {!hasPhoto && <View style={styles.photoInput} ><Text style={{alignSelf: 'center'}}>Tambah Foto</Text></View>}
+                {!hasPhoto && <View style={{ backgroundColor: 'white', margin: 5, }} >
+                    <View style={styles.photoInput} >
+                        <Text style={{ alignSelf: 'center' }}>Tambah Foto</Text>
+                    </View>
+                </View>}
             </TouchableOpacity>
             <Text style={styles.text}>Nama Kebun</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('namaKebun', value)} />
@@ -72,8 +76,10 @@ const TambahData = ({ navigation }) => {
             <Text style={styles.text}>Deskripsi Produk</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('deskripsiProduk', value)} />
             <Text style={styles.text}>Harga Produk</Text>
+            <Text style={{ marginLeft: 5 }}>*Harga /kg</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('hargaProduk', value)} />
             <Text style={styles.text}>No Whatsapp</Text>
+            <Text style={{ marginLeft: 5 }}>ex: 6281212345678</Text>
             <TextInput style={styles.textInput} onChangeText={value => setForm('noWhatsApp', value)} />
             <TouchableOpacity onPress={() => onSubmit()} >
                 <View style={styles.btn} >
@@ -89,7 +95,8 @@ export default TambahData
 const styles = StyleSheet.create({
     text: {
         margin: 5,
-        
+        fontSize: 20
+
     },
     textInput: {
         borderWidth: 1,
@@ -122,6 +129,6 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     image: {
-        height: 200,
+        height: 300,
     }
 })

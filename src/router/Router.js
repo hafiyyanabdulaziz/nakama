@@ -40,9 +40,34 @@ const StackHome = ({ navigation }) => {
                 headerStyle: {
                     backgroundColor: '#4CAF50',
                 },
+                headerTitle: 'Nakama',
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                    color: 'white'
+                }
             }} />
-            <Stack.Screen name="Tambah Data" component={TambahData} />
-            <Stack.Screen name="Detail" component={Detail} />
+            <Stack.Screen name="Tambah Data" component={TambahData} options={{
+                headerTitle: 'Nakama',
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                    color: 'white'
+                },
+                headerStyle: {
+                    backgroundColor: '#4CAF50',
+                },
+                headerTintColor: 'white',
+            }} />
+            <Stack.Screen name="Detail" component={Detail} options={{
+                headerTitle: 'Nakama',
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                    color: 'white'
+                },
+                headerStyle: {
+                    backgroundColor: '#4CAF50',
+                },
+                headerTintColor: 'white',
+            }} />
         </Stack.Navigator>
     )
 }
@@ -57,6 +82,11 @@ const StackTentangKami = ({ navigation }) => {
                 headerStyle: {
                     backgroundColor: '#4CAF50',
                 },
+                headerTitle: 'Nakama',
+                headerTitleAlign: 'center',
+                headerTitleStyle: {
+                    color: 'white'
+                }
             }} />
         </Stack.Navigator>
     )
