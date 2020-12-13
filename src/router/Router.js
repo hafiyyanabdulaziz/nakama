@@ -8,13 +8,15 @@ import CustomSidebarMenu from './CustomSidebarMenu'
 import NavigationDrawerStructure from '../components/NavigationDrawerStructure'
 import TambahData from '../pages/TambahData'
 import Detail from '../pages/Detail'
+import Splash from '../pages/Splash'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const Router = () => {
     return (
-        <Stack.Navigator initialRouteName='Login' >
+        <Stack.Navigator initialRouteName='Splash' >
+            <Stack.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
             <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
             <Stack.Screen name="Home" component={DrawerHome} options={{ headerShown: false }} />
         </Stack.Navigator>
