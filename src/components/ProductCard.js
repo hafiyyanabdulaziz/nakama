@@ -9,7 +9,7 @@ const ProductCard = ({ src, pemilik, judul, harga }) => {
             <View style={{padding:5}}>
             <Text style={styles.textWhite}>{pemilik}</Text>
             <Text style={[styles.textWhite,styles.textBig]}>{judul}</Text>
-            <Text style={styles.textWhite}>{"Rp "+harga +" /kg"}</Text>
+            <Text style={styles.textWhite}>{"Rp."+harga +"/kg"}</Text>
             </View>
         </View>
 
