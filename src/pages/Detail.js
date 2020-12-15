@@ -18,7 +18,7 @@ const Detail = ({route}) => {
   const {photoProduk} = route.params;
 
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor:"white"}}>
       <Image style={styles.image} source={{uri: photoProduk}} />
       <View style={{borderTopLeftRadius:20,borderTopRightRadius:20,backgroundColor:"white",marginTop:-15}}>
         <Text style={styles.text}>{namaKebun}</Text>
