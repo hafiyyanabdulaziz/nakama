@@ -5,7 +5,6 @@ import {
   View,
   FlatList,
   Image,
-  ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import ProductCard from '../components/ProductCard';
@@ -25,8 +24,31 @@ const Home = ({navigation}) => {
 
   return (
     <View style={{backgroundColor: 'white'}}>
-      <View style={{backgroundColor: 'white', marginTop: 20}}>
+      <View style={{backgroundColor: 'white'}}>
         <FlatList
+          ListHeaderComponent={
+            <>
+              <View>
+                <Image
+                  source={require('../assets/img/image.jpg')}
+                  style={{height: 250}}
+                />
+                <Text
+                  style={{
+                    position: 'absolute',
+                    top: 150,
+                    left: 20,
+                    fontSize: 30,
+                    color: 'white',
+                  }}>
+                  Aplikasi jual beli hasil{'\n'}pertanian mudah dan cepat
+                </Text>
+              </View>
+              <View style={{marginLeft: 15,marginTop:10}}>
+                <Text style={{fontSize:20}}>Produk Saat Ini</Text>
+              </View>
+            </>
+          }
           nestedScrollEnabled={true}
           data={dataSource}
           renderItem={({item}) => (
@@ -64,7 +86,9 @@ const Home = ({navigation}) => {
               navigation.navigate('Tambah Data');
             }}>
             <View style={styles.btnJual}>
-              <Text style={{marginTop:2,fontSize:18,color:"#FFFFFF"}}>Jual</Text>
+              <Text style={{marginTop: 2, fontSize: 18, color: '#FFFFFF'}}>
+                Jual
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -91,16 +115,18 @@ const styles = StyleSheet.create({
     height: 40,
     width: 88,
     margin: 30,
-    borderRadius:30,
-    borderWidth:3,
-    borderColor:"#FFEB3B",
+    borderRadius: 30,
+    borderWidth: 3,
+    borderColor: '#FFEB3B',
     alignItems: 'center',
   },
   posisi2: {
     alignItems: 'center',
     position: 'absolute',
     bottom: 0,
-    left: 0, right: 0, bottom: 0
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
   posisi1: {
     flex: 1,

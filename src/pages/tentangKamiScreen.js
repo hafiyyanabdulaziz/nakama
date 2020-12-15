@@ -9,6 +9,7 @@ const TentangKami = () => {
     return (
         <SafeAreaView>
             <ScrollView>
+                <Text style={{marginTop:20,marginLeft:20,fontSize:30}}>Tentang Kami</Text>
                 <View style={style.imageposition}>
                     <Image style={style.imageStyle} source={Logo}/>
                     <Text style={style.textStyle} >{textPesan}</Text>
@@ -24,10 +25,12 @@ const style = StyleSheet.create({
     imageposition:{
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#FFFFFF'
+        backgroundColor:'#FFFFFF',
+        margin:30,
+        borderRadius:20
     },
     imageStyle:{
-        marginVertical:50,
+        marginVertical:30,
         width: 200,
         height: 200,
         resizeMode:'contain',
@@ -35,6 +38,6 @@ const style = StyleSheet.create({
     textStyle:{
         marginHorizontal:40,
         textAlign:"justify",
-        fontSize:24
+        fontSize:20
     },
 });
