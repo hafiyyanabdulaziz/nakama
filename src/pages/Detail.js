@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   textDeskripsi: {
     marginTop: 10,
     marginHorizontal:25,
-    fontSize: 18,
+    fontSize: 15,
     textAlign: 'justify'
   },
   btn: {
