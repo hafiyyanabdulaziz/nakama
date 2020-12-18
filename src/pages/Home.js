@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,7 +10,7 @@ import {
 import ProductCard from '../components/ProductCard';
 import FIREBASE from '../config/FIREBASE';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const [dataSource, setDataSource] = useState();
 
   useEffect(() => {
@@ -23,35 +23,36 @@ const Home = ({navigation}) => {
   }, []);
 
   return (
-    <View style={{backgroundColor: 'white'}}>
-      <View style={{backgroundColor: 'white'}}>
+    <View style={{ backgroundColor: 'white' }}>
+      <View style={{ backgroundColor: 'white' }}>
         <FlatList
           ListHeaderComponent={
             <>
               <View>
                 <Image
                   source={require('../assets/img/image.jpg')}
-                  style={{height: 250}}
+                  style={{ height: 250 }}
                 />
                 <Text
                   style={{
                     position: 'absolute',
                     top: 150,
                     left: 20,
+                    right: 10,
                     fontSize: 30,
                     color: 'white',
                   }}>
-                  Aplikasi jual beli hasil{'\n'}pertanian mudah dan cepat
+                  Aplikasi jual beli hasil pertanian mudah dan cepat
                 </Text>
               </View>
-              <View style={{marginLeft: 15,marginTop:10}}>
-                <Text style={{fontSize:20}}>Produk Saat Ini</Text>
+              <View style={{ marginLeft: 15, marginTop: 10 }}>
+                <Text style={{ fontSize: 20 }}>Produk Saat Ini</Text>
               </View>
             </>
           }
           nestedScrollEnabled={true}
           data={dataSource}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <View style={styles.posisi1}>
               <TouchableOpacity
                 onPress={() =>
@@ -86,7 +87,7 @@ const Home = ({navigation}) => {
               navigation.navigate('Tambah Data');
             }}>
             <View style={styles.btnJual}>
-              <Text style={{marginTop: 2, fontSize: 18, color: '#FFFFFF'}}>
+              <Text style={{ marginTop: 2, fontSize: 18, color: '#FFFFFF' }}>
                 Jual
               </Text>
             </View>

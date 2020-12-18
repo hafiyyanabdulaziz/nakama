@@ -84,7 +84,7 @@ const StackTentangKami = ({ navigation }) => {
                 headerStyle: {
                     backgroundColor: '#4CAF50',
                 },
-                headerTitle: 'Nakama',
+                headerTitle: 'Tentang Kami',
                 headerTitleAlign: 'center',
                 headerTitleStyle: {
                     color: 'white'
