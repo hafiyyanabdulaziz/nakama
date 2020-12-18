@@ -3,7 +3,7 @@ import {
   DrawerItem,
   DrawerItemList,
 } from '@react-navigation/drawer';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Linking,
   SafeAreaView,
@@ -32,13 +32,13 @@ const CustomSidebarMenu = (props) => {
   }
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.header}>
         {dataSource == null ? null : (
           <>
-            <Image source={{uri: dataSource.user.photo}} style={{width:70,height:70,borderRadius:50,marginVertical:20}} />
-            <Text style={{fontSize:30,color:'#FFFFFF'}}>{dataSource.user.name}</Text>
-            <Text style={{fontSize:15,color:'#FFFFFF'}}>{dataSource.user.email}</Text>
+            <Image source={{ uri: dataSource.user.photo }} style={{ width: 70, height: 70, borderRadius: 50, marginVertical: 20 }} />
+            <Text style={{ fontSize: 30, color: '#FFFFFF' }}>{dataSource.user.name}</Text>
+            <Text style={{ fontSize: 15, color: '#FFFFFF' }}>{dataSource.user.email}</Text>
           </>
         )}
       </View>
@@ -48,19 +48,19 @@ const CustomSidebarMenu = (props) => {
           label="Hubungi Developer"
           onPress={() =>
             Linking.openURL(
-              'mailto:hanyacontohemail@gmail.com?subject=Need Support Developer',
+              'mailto:kitahukomputer@gmail.com?subject=Need Support Developer',
             )
           }
         />
         <DrawerItem
           label="Follow us"
           onPress={() =>
-            Linking.openURL('https://instagram.com/hafiyyanabdulaziz')
+            Linking.openURL('https://instagram.com/kitahukomputer')
           }
         />
         <DrawerItem
           label="Beri Rating"
-          onPress={() => Linking.openURL('market://details?id=myandroidappid')}
+          onPress={() => Linking.openURL('market://details?id=com.nakama')}
         />
       </DrawerContentScrollView>
 
@@ -87,9 +87,9 @@ const styles = StyleSheet.create({
   header: {
     height: 190,
     backgroundColor: '#4CAF50',
-    alignItems:'center',
+    alignItems: 'center',
   },
-  logout: {fontSize: 16, textAlign: 'center', paddingTop: 3, color: '#FFFFFF'},
+  logout: { fontSize: 16, textAlign: 'center', paddingTop: 3, color: '#FFFFFF' },
   positionBtn: {
     justifyContent: 'center',
     alignItems: 'center',
