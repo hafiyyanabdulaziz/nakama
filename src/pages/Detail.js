@@ -18,9 +18,15 @@ const Detail = ({route}) => {
   const {photoProduk} = route.params;
 
   return (
-    <ScrollView style={{backgroundColor:"white"}}>
+    <ScrollView style={{backgroundColor: 'white'}}>
       <Image style={styles.image} source={{uri: photoProduk}} />
-      <View style={{borderTopLeftRadius:20,borderTopRightRadius:20,backgroundColor:"white",marginTop:-15}}>
+      <View
+        style={{
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          backgroundColor: 'white',
+          marginTop: -15,
+        }}>
         <Text style={styles.text}>{namaKebun}</Text>
         <Text style={styles.textproduk}>{namaProduk}</Text>
         <Text style={styles.textDeskripsi}>{deskripsiProduk}</Text>
@@ -41,20 +47,20 @@ export default Detail;
 const styles = StyleSheet.create({
   text: {
     marginTop: 15,
-    marginLeft:25,
+    marginLeft: 25,
     fontSize: 20,
   },
   textproduk: {
     marginTop: 5,
-    marginLeft:15,
+    marginLeft: 15,
     fontSize: 25,
     fontWeight: 'bold',
   },
   textDeskripsi: {
     marginTop: 10,
-    marginHorizontal:25,
+    marginHorizontal: 25,
     fontSize: 15,
-    textAlign: 'justify'
+    textAlign: 'justify',
   },
   btn: {
     backgroundColor: '#74B631',

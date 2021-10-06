@@ -1,4 +1,4 @@
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import Router from './router/Router';
 
@@ -7,8 +7,7 @@ const App = () => {
     <NavigationContainer>
       <Router />
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
