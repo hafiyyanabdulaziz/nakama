@@ -41,11 +41,7 @@ const Home = ({navigation}) => {
             <TouchableOpacity
               onPress={() =>
                 navigation.navigate('Detail', {
-                  // namaKebun: item.namaKebun,
-                  // namaProduk: item.namaProduk,
-                  // deskripsiProduk: item.deskripsiProduk,
-                  // hargaProduk: item.hargaProduk,
-                  // noWhatsApp: item.noWhatsApp,
+                  url: item.link,
                   photoProduk: item.media.m,
                 })
               }>
