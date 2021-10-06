@@ -10,13 +10,13 @@ import {
 import {Logo} from '../assets';
 
 const textPesan =
-  'Nakama merupakan sebuah aplikasi jual beli hasi pertanian yang memungkinkan semua orang dapat menjual ataupun membeli tanpa perlu repot mencarinya, dasar terciptanya aplikasi ini karena masih banyaknya petani kecil yang kesulitan dalam memasarkan hasil pertaniannya.';
+  'Find the best photos from around the world in the Nakama App. Powered by flickr.';
 
 const TentangKami = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-        {/* <Text style={{marginTop:20,marginLeft:20,fontSize:30}}>Tentang Kami</Text> */}
+        {/* <Text style={{marginTop:20,marginLeft:20,fontSize:30}}>About Nakama</Text> */}
         <View style={style.imageposition}>
           <Image style={style.imageStyle} source={Logo} />
           <Text style={style.textStyle}>{textPesan}</Text>

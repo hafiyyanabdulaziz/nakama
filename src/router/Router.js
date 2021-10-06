@@ -31,7 +31,7 @@ const DrawerHome = () => {
         component={StackHome}
         options={{drawerLabel: 'Home'}}
       />
-      <Drawer.Screen name="Tentang Kami" component={StackTentangKami} />
+      <Drawer.Screen name="About Nakama" component={StackTentangKami} />
     </Drawer.Navigator>
   );
 };
@@ -78,9 +78,9 @@ const StackHome = ({navigation}) => {
 
 const StackTentangKami = ({navigation}) => {
   return (
-    <Stack.Navigator initialRouteName="Tentang Kami">
+    <Stack.Navigator initialRouteName="About Nakama">
       <Stack.Screen
-        name="Tentang Kami"
+        name="About Nakama"
         component={TentangKami}
         options={{
           headerLeft: () => (
@@ -89,7 +89,7 @@ const StackTentangKami = ({navigation}) => {
           headerStyle: {
             backgroundColor: '#4CAF50',
           },
-          headerTitle: 'Tentang Kami',
+          headerTitle: 'About Nakama',
           headerTitleAlign: 'center',
           headerTitleStyle: {
             color: 'white',
